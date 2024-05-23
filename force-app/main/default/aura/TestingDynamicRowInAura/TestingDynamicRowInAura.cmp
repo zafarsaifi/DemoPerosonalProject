@@ -1,0 +1,29 @@
+<aura:component>
+    <aura:attribute name="numRows" type="Integer" default="0"/>
+    <aura:attribute name="rowData" type="List" />
+    
+    <lightning:input type="number" label="Number of Rows" value="{!v.numRows}"/>
+    <lightning:button label="Create Rows" onclick="{!c.createRows}"/>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Row Number</th>
+                <th>Row Data</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.rowData}" var="row">
+                <tr>
+                       
+                  
+                    <td colspan="2" ><lightning:input name="batchNumber" type="number"  onchange="{v.handleChangeBatchNumber}" aura:id="batchId"/></td>
+                      <td><lightning:input name="batchNumber" type="number"  onchange="{v.handleChangeBatchNumber}" aura:id="batchId"/></td>
+                     <td><lightning:input name="Date" type="Date"  onchange="{v.handleChangeBatchNumbear}" aura:id="batchId"/></td>
+                   
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

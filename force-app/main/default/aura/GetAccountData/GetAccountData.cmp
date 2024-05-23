@@ -1,0 +1,157 @@
+<aura:component controller="AuraCodeHandler"
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global">
+  <!-- Here handler is Start  -->
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <!-- Here We are create attribute to use in our Component -->
+  <aura:attribute name="accountList" type="List" />
+  <aura:attribute name="isAccountModal" type="boolean" default="false" />
+  <aura:attribute name="isUpdateAccountRecordModal" type="boolean" default="false" />
+  <aura:attribute name="AccountList1" type="Account" />
+  <aura:attribute name="AccountDetails" type="Account" description="This list will store the data of Account" />
+  <aura:attribute name="accId1" type="String" />
+  <aura:attribute name="showSpinner" type="Boolean" default="false" />
+  <aura:attribute name="showTostMessage" type="Boolean" default="false"/>
+  <aura:dependency resource="markup://force:*" type="EVENT" />
+  <!-- Here Table Code is Start -->
+
+  <aura:if isTrue="{!v.showSpinner}">
+    <lightning:spinner size="small" variant="brand" />
+  </aura:if>
+  <h1>Account Data Table</h1>
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+    aria-labelledby="element-with-table-label other-element-with-table-label">
+    <thead>
+      <tr>
+        <th class="" scope="col"></th>
+        <th class="" scope="col">
+        </th>
+        <th class="" scope="col">
+          <lightning:button variant="brand" label="Create Account" title="Primary action"
+            onclick="{!c.handleCreateAccont}" class="slds-m-left_x-small"></lightning:button>
+        </th>
+      </tr>
+      <tr class="slds-line-height_reset">
+        <th class="" scope="col">
+          <div class="slds-truncate" title="AccountName">Account Name</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Account Phone">Phone</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="Industry">Industry</div>
+        </th>
+        <th class="" scope="col">
+          <div class="slds-truncate" title="type">Type</div>
+        </th>
+        <th>
+          <div class="slds-truncate" title="Action">Action</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <aura:iteration items="{!v.accountList}" var="item">
+        <tr>
+          
+          <td>  {!item.Name}</td>
+          <td>{!item.Phone}</td>
+          <td>{!item.Industry}</td>
+          <td>{!item.Type}</td>
+          <td>
+            <div class="actionHead">
+              <span data-id="{!item.Id}">
+                <lightning:button variant="brand" label="Edit" title="Edit" onclick="{!c.editRecordHandler }" />
+              </span>
+              <span data-id="{!item.Id}">
+                <lightning:button variant="destructive" label="Remove" title="Remove"
+                  onclick="{!c.deleteRecordHandler}" />
+              </span>
+            </div>
+          </td>
+        </tr>
+
+      </aura:iteration>
+    </tbody>
+  </table>
+
+  <aura:if isTrue="{!v.isUpdateAccountRecordModal}">
+
+    <!-- ############################################## -->
+    <!-- Modal Popup box start Here -->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+      aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <!-- Modal/Popup Box Header Starts here-->
+        <header class="slds-modal__header">
+          <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }" alternativeText="close"
+            variant="bare-inverse" class="slds-modal__close" />
+          <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Update Account</h2>
+        </header>
+        <!-- Modal box Body -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+          <lightning:input type="text" label="Update Account Name" aura:id="acName" value="{!v.AccountDetails.Name}" />
+          <lightning:input type="Number" label="Update Phone Number" aura:id="acPId"
+            value="{!v.AccountDetails.Phone}" />
+          <lightning:input type="text" label="Update Account Industry" aura:id="acIndId"
+            value="{!v.AccountDetails.Industry}" />
+
+        </div>
+        <!--Modal/Popup Box Footer Starts here-->
+
+        <footer class="slds-modal__footer">
+          <div class="slds-text-align_center">
+            <lightning:button variant="Brand" label="Update Account" title="Update Account"
+              onclick="{!c.updateThisAccount}" />
+            <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.closeModel }" />
+          </div>
+        </footer>
+
+
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </aura:if>
+
+  <!-- for Update Modal -->
+  <aura:if isTrue="{!v.isAccountModal}">
+
+    <!-- ############################################## -->
+    <!-- Modal Popup box start Here -->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+      aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <!-- Modal/Popup Box Header Starts here-->
+        <header class="slds-modal__header">
+          <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }" alternativeText="close"
+            variant="bare-inverse" class="slds-modal__close" />
+          <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Insert New Account</h2>
+        </header>
+        <!-- Modal box Body -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+          <lightning:input type="text" label="Enter Account Name" aura:id="acName" />
+          <lightning:input type="Number" label="Enter Phone Number" aura:id="acPId" />
+          <lightning:input type="text" label="Enter Account Industry" aura:id="acIndId" />
+
+        </div>
+
+
+
+        <!--Modal/Popup Box Footer Starts here-->
+
+        <footer class="slds-modal__footer">
+          <div class="slds-text-align_center">
+            <lightning:button variant="success" label="Save" title="Save" onclick="{!c.insertNewAccount}" />
+            <lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{!c.closeModel }" />
+          </div>
+        </footer>
+
+
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </aura:if>
+
+
+</aura:component>

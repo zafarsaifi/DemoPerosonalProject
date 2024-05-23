@@ -1,0 +1,23 @@
+<template>
+    <lightning-button
+    variant="brand"
+    label={ShowContacts}
+    onclick={onclickhandler}></lightning-button>
+    <template if:true={isVisible}>
+        <lightning-card title="LWC DataTable">
+            <lightning-input
+            type="seacrh"
+                          label="Search Contact"
+                          onchange={onchangeContact}
+                          value ={searchkey}>
+                        </lightning-input>
+        <lightning-datatable 
+        data={data}
+        columns={columns} 
+        key-field="Id" 
+        onrowselection={onrowchangehandler}>
+        </lightning-datatable>
+    </lightning-card>
+    </template>
+
+</template>

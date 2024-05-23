@@ -1,0 +1,9 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes">
+     <div>
+       
+        <lightning:button label="Success"
+                          variant="success"
+                          onclick="{!c.showSuccess}"/>
+    </div> 
+	
+</aura:component>

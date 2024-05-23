@@ -1,0 +1,21 @@
+<aura:component implements="lightning:actionOverride">
+    <aura:attribute name="selectedOption" type="String" default="" />
+    <aura:attribute name="showContent" type="Boolean" default="false" />
+    <aura:attribute name="iterationList" type="List" default="[]" />
+    <aura:attribute name="options" type="List"/>
+
+    <lightning:select aura:id="selectId" onchange="{!c.handleSelectionChange}" label="testing">
+        <aura:iteration items="{!v.options}" var="option">
+            <option value="{!option.value}">{!option.label}</option>
+        </aura:iteration>
+    </lightning:select>
+
+    <aura:if isTrue="{!v.showContent}">
+        <!-- Content to show based on the condition -->
+        <ul>
+            <aura:iteration items="{!v.iterationList}" var="item">
+                <li>{!item}</li>
+            </aura:iteration>
+        </ul>
+    </aura:if>
+</aura:component>

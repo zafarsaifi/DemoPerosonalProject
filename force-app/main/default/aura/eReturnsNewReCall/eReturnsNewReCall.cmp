@@ -1,0 +1,150 @@
+<aura:component >
+    <!-- These Attribute are use for enable disable button -->
+    <aura:attribute name="isSendActive" type="boolean" default="true" />
+    <aura:attribute name="isdeleteLinesActive" type="boolean" default="true" />
+    <aura:attribute name="checkbox" type="Boolean" default="true" />
+    <aura:attribute name="QauntityNumber" type="Integer" default="1" />
+    <aura:attribute name="rowData" type="List" />
+    
+    
+    <div class="allCode">
+        
+        <lightning:layout>
+            <lightning:layoutItem size="12">
+                
+                <div class="divClass1 slds-text-heading_medium">
+                    <p><h2>New recall</h2>
+                        <lightning:button iconName="utility:send" variant="destructive" label="Send recall" class="sldsbutton"
+                                          onclick="{!c.handleChangeSendRecall}" disabled="{!v.isSendActive}" aura:id="sendButton1">
+                        </lightning:button>
+                        <lightning:button iconName="utility:save" variant="destructive-text" label="Save recall" class="sldsbutton1"
+                                          onclick="{!c.handleChangeSave}"> </lightning:button>
+                    </p>
+                    <br />
+                    <p class="slds-text-heading_small">To begin, search and add the product you would like to return to start a
+                        recall
+                        request.</p>
+                </div>
+                <hr />
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        
+        <lightning:layout>
+            <lightning:layoutItem size="12">
+                <div class="divClass2 slds-text-heading_medium ">
+                    <div>
+                        <b>Order Lines</b>
+                        <lightning:button iconName="utility:add" variant="destructive-text" label="Add Product to Return"
+                                          class="sldsbutton2" onclick="{!c.handleChangeAddProductToReturn}" />
+                        <lightning:button iconName="utility:delete" variant="destructive-text" label="delete lines"
+                                          class="sldsbutton2" onclick="{!c.handleChangeDeleteLines}" disabled="{!v.isdeleteLinesActive}" />
+                        <br />
+                        <p style="font-size: x-small;">Showing Order 1 Of 1</p>
+                    </div>
+                    
+                    <hr />
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+        
+        <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="12">
+                <table>
+                    <thead>
+                        <tr class="contentTableHeader">
+                            <th></th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Batch Number</th>
+                            <th>Expiry Date</th>
+                        </tr>
+                    </thead>     
+                        <tr>
+                            <td>
+                                <lightning:input name="checkbox1" type="checkbox" label="" onchange="{!c.onCheck}" aura:id="checkbox"/>
+                            </td>
+                            <td>
+                                <lightning:input name="productName" type="text" onchange="{v.handleChangeProduct}"></lightning:input>
+                            </td>
+                            <td>
+                                <lightning:input type="number" value="{!v.QauntityNumber}"  onchange="{!c.quantityHandler}"/>
+                                
+                            </td>
+                            <td>
+                                <lightning:input name="batchNumber" type="number" onchange="{!v.handleChangeBatchNumber}" />
+                            </td>
+                            <td>
+                                <lightning:input name="expiryDate" type="Date" onchange="{!v.handleChangeExpiryDate}" />
+                            </td>
+                        </tr>
+                        <tbody>
+                        <aura:iteration items="{!v.rowData}" var="row">
+                            
+                            <tr>
+                                <td colspan="3" style="border:none">
+                                </td>   
+                                <td>
+                                    <lightning:input name="batchNumber" type="number" onchange="{!v.handleChangeBatchNumber}" />
+                                </td>
+                                <td>
+                                    <lightning:input name="expiryDate" type="Date" onchange="{!v.handleChangeExpiryDate}" />
+                                </td>
+                            </tr>
+                            
+                        </aura:iteration>
+                            
+                        
+                    </tbody>
+                    
+                </table>
+                <hr />
+                <lightning:layout>
+                      
+                    <div class="TextInfo">
+                        
+                        <h2>Testing purpose</h2><br />
+                        <p>
+                            Product<br />
+                            qty<br />
+                            batch no. (may be different more qty) no time limit <br />
+                            text area to describe the quality issue
+                        </p>
+                        
+                    </div>
+                </lightning:layout>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem>
+                <div class="container">
+                    <div class="tandc">Terms and Conditions </div>
+                    
+                    <div class="slds-border_top comboBox-lines">
+                        <lightning:input name="checkbox" type="checkbox" onchange="{!c.onCheck}"/>
+                        
+                        I agreee to the AAH terms and conditions and have provided accurate information and understand and
+                        misinformation will lead to my return claim being rejected
+                    </div>
+                </div>
+                
+                
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout >
+            <div class="buttomButton">
+                <lightning:layoutItem  >
+                    <lightning:button iconName="utility:send" variant="destructive" label="Send recall" class="sldsbutton"
+                                      onclick="{!c.handleChangeSendRecall}" disabled="{!v.isSendActive}" aura:id="sendButton1"/>
+                    
+                    <lightning:button iconName="utility:save" variant="destructive-text" label="Save recall" class="sldsbutton1"
+                                      onclick="{!c.handleChangeSave}"> </lightning:button>
+                    
+                </lightning:layoutItem>
+                
+            </div>
+        </lightning:layout>
+    </div>
+    
+    
+</aura:component>

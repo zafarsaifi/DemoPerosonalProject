@@ -1,0 +1,41 @@
+<template>
+   <div class="topSpace" if:true={showHomeModel}>
+    <div class="slds-box slds-align_absolute-center">
+      <lightning-layout multiple-rows="true">
+        <lightning-layout-item size="12" padding="around-small">
+            <div class="HeaderText slds-align_absolute-center slds-text-heading_large" >
+                <p style="padding-right: 10px; color:#0f4b61" >Order </p><p style="color:#4f5c61;">MadeEasy</p>
+                </div> 
+                <div style="margin: 0px;"><hr></div>  
+        </lightning-layout-item><br><br>
+
+        <lightning-layout-item padding="around-small" size="12">
+            <button class="slds-button slds-button_outline-brand slds-align--absolute-center" onclick={createAccountModel} style="width: 450px;border-radius:20px;" >
+                New Customer
+            </button>
+        </lightning-layout-item><br><br>
+        <lightning-layout-item padding="around-small" size="12">
+            <button class="slds-button slds-button_brand slds-align--absolute-center" onclick={ExistingAccountModel} style="width: 450px;border-radius:20px;" >
+              Existing Customer
+            </button>
+        </lightning-layout-item>
+
+
+
+      </lightning-layout>
+    </div>
+   </div>
+   <!-- This Template is use for to create The Account Using Field Set -->
+   <template if:true={isCreateAccountModel}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+          <!-- Modal/Popup Box LWC body starts here -->
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <c-new-account-creation ></c-new-account-creation>
+          </div>  
+         
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+   </template>
+</template>

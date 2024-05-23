@@ -1,0 +1,5 @@
+<aura:component controller="AuraCodeHandler" Implements="flexipage:availableForRecordHome,force:hasRecordId">
+
+    <div class="slds-m-around--xx-large"></div>
+
+</aura:component>

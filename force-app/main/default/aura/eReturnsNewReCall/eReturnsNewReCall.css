@@ -1,0 +1,93 @@
+.THIS .sldsbutton {
+    border-radius: 20px;
+    margin-left: 30em;
+    border: 2px solid;
+
+
+}
+
+.THIS .sldsbutton1 {
+    border-radius: 20px;
+    margin-left: 20em;
+    border: 2px solid;
+
+
+}
+
+.THIS .sldsbutton2 {
+    border-radius: 20px;
+    margin-left: 25em;
+    margin-top: 10px;
+    border: 2px solid;
+
+
+
+}
+
+.THIS .divClass1 {
+    padding-left: 1em;
+}
+.THIS .divClass2 {
+    border-radius: 20px;
+    padding-bottom: 0em;
+    padding-left: 1em;
+}
+.THIS .divClass3 {
+    padding-bottom: 0em;
+    padding-left: 1em;
+}
+
+.THIS .contentTableHeader {
+
+    width: 964px;
+    height: 60px;
+    left: 28px;
+    top: 474px;
+    background: #F6F6F6;
+}
+.THIS .container {
+
+    box-sizing: border-box;
+    margin-left: 40px;
+
+    width: 985px;
+    height: 182px;
+    left: 18px;
+    top: 457px;
+
+    background: #FFFFFF;
+    /* Med grey */
+
+    border: 1px solid #949494;
+    border-radius: 10px;
+
+}
+.THIS .tandc {
+    width: 278px;
+    height: 35px;
+    left: 29px;
+    top: 474px;
+
+    /* Heading 3 */
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 35px;
+    letter-spacing: 0.005em;
+
+    color: #1A1A1A;
+    padding-left: 10px;
+}
+.THIS .buttomButton{
+
+    padding-top: 10px;
+    padding-left: 10em;
+    
+   
+}
+.THIS .TextInfo{
+    padding-left: 30px;
+
+}

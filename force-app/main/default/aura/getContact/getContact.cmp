@@ -1,0 +1,21 @@
+<aura:component controller="AuraCodeHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 <p>Hello Aura</p>
+    <aura:handler name="init" value="{!this}" action ="{!c.getCotactData1}"/>
+    <aura:attribute name="getContact" type="List"/>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col"><span class="slds-truncate">FirstName</span></th>
+                <th scope="col"><span class="slds-truncate">Email</span></th>
+                <th scope="col"><span class="slds-truncate">Phone</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.getContact}" var="con"/>
+            <td>{!con.FirstName}</td>
+            <td>{!con.Email}</td>
+            <td>{!con.Phone}</td>
+        </tbody>
+    </table>
+  
+</aura:component>

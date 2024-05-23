@@ -1,0 +1,13 @@
+<aura:component >
+	<div class='container-cb-rb' style='float:left;'>
+     <div class='lp-checkbox'>
+         <input id="checkbox1" type="checkbox" value="value1" checked="checked"/>
+      <label for="checkbox1">Checkbox Label</label>
+     </div>
+
+    <div class='lp-checkbox'>
+        <lightning:input id="checkbox2" type="checkbox" value="value2"/>
+      <label for="checkbox2">Checkbox Label</label>
+    </div>
+</div>
+</aura:component>

@@ -1,0 +1,8 @@
+<apex:page sidebar="false" controller="accPickNamesDisplayClass">
+	 <apex:form >
+       <apex:selectList value="{!selectedOption}">
+           <apex:selectOptions value="{!dynamicOptions}" />
+       </apex:selectList>
+       <apex:commandButton value="Load Options" action="{!loadDynamicOptions}" rerender="combo-box" />
+   </apex:form>
+</apex:page>

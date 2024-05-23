@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Trainer" icon-name="standard:people">
+  <!-- Record form -->
+  <!-- <lightning-record-form   
+                    object-api-name="Contact"
+                    record-id={trainerId}
+                    layout-type="Compact">
+
+  </lightning-record-form> -->
+
+
+<template if:true={getTrainerDetailviaProperty.data}>
+
+    <lightning-record-form   
+                    object-api-name="Contact"
+                    record-id={trainerId}
+                    layout-type="Compact">
+
+  </lightning-record-form>
+</template>
+<template if:true ={getTrainerDetailviaProperty.error}>
+    Show error Template
+    </template>
+
+    </lightning-card>
+
+</template>

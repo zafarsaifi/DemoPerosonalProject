@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Account With Contact">
+        <!-- <template></template> -->
+        <template if:true={record.Data}>   
+            <lightning-formatted-text value={Name}></lightning-formatted-text>
+        </template> 
+        <ul>
+            <template for:each={contacts} for:item="contact">
+                <li key={contact.Id}>
+                   1->{contact.FirstName} -{contact.LastName} {Phone}
+                </li>
+            </template>
+            <template  if:true={error}></template>
+        </ul>
+    </lightning-card>
+</template>

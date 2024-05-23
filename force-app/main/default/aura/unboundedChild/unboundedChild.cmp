@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="childVar" type="String" default ="Initial Value"/>
+    
+    Child Value :{!v.childVar}
+    <br/><br/>
+    <lightning:button label="update Child Variable" onclick="{!c.updateChildVar}"/>
+</aura:component>

@@ -1,0 +1,8 @@
+<apex:page controller="VfPageController">
+    
+    <apex:outputPanel rendered="{!ab == ''}">
+
+        <p>This message is displayed because the condition is true.{!ab}</p>
+    </apex:outputPanel>
+   
+</apex:page>

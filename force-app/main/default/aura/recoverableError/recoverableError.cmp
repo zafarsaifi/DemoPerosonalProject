@@ -1,0 +1,8 @@
+<aura:component >
+    <p>Test Purpose code</p>
+    <div aura:id="div1">
+        
+    </div>
+
+    <lightning:button label="Click me" onclick="{!c.onClickAction}"/>
+</aura:component>

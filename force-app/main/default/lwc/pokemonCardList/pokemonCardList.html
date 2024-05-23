@@ -1,0 +1,56 @@
+<template>
+<lightning-card title="Pokemons" icon-name="utility:animal_and_nature">
+
+    <template if:true={PokemonsDetails}>
+    <lightning-layout multiple-rows ="true">
+              <lightning-layout-item size="12">
+                  <lightning-input type="search"
+                                    class="slds-var-m-bottom_small slds-p-left_small slds-p-right_small"
+                                   placeholder="Enter Pokemons Name"
+                                   onchange={handleSerchPokemons}
+                                   value={searchPokemons}
+                                   variant ="label-hidden"></lightning-input>
+              </lightning-layout-item>
+        
+
+           <template for:each={PokemonsDetails} 
+                     for:item="obj">
+
+                    <lightning-layout-item  key={obj.id} siz="3" 
+                                            class="slds-var-p-around_small">
+                        <lightning-card title={obj.Name} class="pokemons_details">
+                            <div class="slds-var-p-horizontal_small">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_8-of-12">
+                                     <img src={obj.image__c} alt="pokemon" class="pokemon_image"></img>
+                                    </div>
+                                     <div class="slds-col slds-size_4-of-12">
+                                        <p class="slds-var-m-bottom_small">{obj.height__c} cm</p>
+                                        <p class="slds-var-m-bottom_small">{obj.Weight__c} Kg</p>
+                                        <p class="slds-var-m-bottom_small"><strong>{obj.Traner__r.Name}</strong></p>
+                                                                                                                      
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </lightning-card>
+                    </lightning-layout-item>
+                     
+
+           </template>
+    </lightning-layout>
+   
+    </template>
+
+    <template if:true={isVisible}>
+        You have no Pokemons Details Related to This SearchKey.
+    </template>
+
+  <template if:true={error}>
+      Error :{error}
+  </template>
+
+</lightning-card>
+</template>

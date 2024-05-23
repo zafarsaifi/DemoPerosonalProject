@@ -1,0 +1,33 @@
+<aura:component controller="BarcodeController">
+    <aura:attribute name="barcodeValue" type="String" default="050123456"/>
+    <aura:attribute name="additionalData" type="String" default=""/>
+    <aura:attribute name="boolShowSpinner" type="Boolean" default="false"/>
+    <ltng:require scripts="{!$Resource.barcodeGenerator}"/>
+
+    <lightning:card title="Generate Barcode">
+         <iframe src="/apex/vfPageInAura" width="100%" height="400px" frameborder="0"/>
+
+        <aura:if isTrue="{!v.boolShowSpinner == false}">
+            <div class="slds-p-around_small">
+                <lightning:button variant="brand" label="Generate Barcode" onclick="{!c.generateBarcode}" />
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.boolShowSpinner}">
+            <div class="slds-p-around_small">
+                <lightning:spinner alternativeText="Loading" size="large" />
+            </div>
+        </aura:if>
+
+        <lightning:layout>
+            <lightning:layoutItem size="12">
+                <canvas aura:id="barcodeCanvas" data-id="barcode" />
+            </lightning:layoutItem>
+        </lightning:layout>
+
+        <lightning:layout>
+            <lightning:layoutItem size="12">
+                <img aura:id="barcodeImage" src="" alt="Barcode" />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

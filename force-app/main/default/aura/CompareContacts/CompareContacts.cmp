@@ -1,0 +1,69 @@
+<aura:component controller="AuraCodeHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="contact" type="list" default="[]"/>
+    <aura:attribute name="selectedContactId" type="String" />
+    <aura:attribute name="flag1" type="boolean" default="true"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:layout>
+      
+       
+        <lightning:layoutItem padding="around-small" size="4">
+            <h1>First Contact Details</h1>
+            <lightning:recordForm
+            recordId="{!v.recordId}"
+            objectApiName="Contact"
+            layoutType="Full"
+            columns="1"
+            mode="readonly"/>
+          </lightning:layoutItem>
+
+      <lightning:layoutItem padding="around-small" size="4">
+        <h1> Select Contact to Compare</h1>
+
+       <lightning:combobox name="contact"
+        label="Contacts" 
+        value="{!v.selectedContactId}" 
+        placeholder="Select contact" 
+        options="{!v.contact}" 
+        onchange="{!c.handleChange }"/>
+      
+
+        <p>2nd Contact Details on SELECTing Option</p>
+            <lightning:recordForm
+            recordId="{!v.selectedContactId}"
+            objectApiName="Contact"
+            layoutType="Full"
+            columns="1"
+            mode="readonly"/>
+        
+
+        
+       </lightning:layoutItem> 
+           <lightning:layoutItem padding="around-small" size="4">
+        <p>Under Working</p>
+        <lightning:button 
+        variant="brand" 
+        label="+" 
+        title="Brand action"
+        onclick="{!c.handleClickButton }" ></lightning:button>
+       
+        <aura:renderIf isTrue="{!v.flag1}">
+           <h1>Testing</h1>
+           <lightning:combobox name="contact"
+           label="Contacts" 
+           value="{!v.selectedContactId}" 
+           placeholder="Select contact" 
+           options="{!v.contact}" 
+           onchange="{!c.handleChange }"/>
+         <aura:set attribute="else">
+            False
+         </aura:set>
+          
+       </aura:renderIf>
+      
+      
+           </lightning:layoutItem>
+    </lightning:layout>
+    
+
+</aura:component>

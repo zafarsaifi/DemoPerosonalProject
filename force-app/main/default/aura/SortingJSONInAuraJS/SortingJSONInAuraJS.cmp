@@ -1,0 +1,50 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="JSONList" type="LIST" default="[]"/>
+    
+    <div>This is Aura Component</div>
+    <table>
+        <thead>
+            <tr>
+                
+                <th class="slds-is-resizable table-header-background-color" scope="col">
+                    <div class="slds-truncate table-header-text text-wrap-td">Product code</div>
+                </th>
+                <th class="slds-is-resizable table-header-background-color" scope="col">
+                    <div class="slds-truncate table-header-text text-wrap-td">Product description - Pack size
+                    </div>
+                </th>
+                <th class="slds-is-resizable table-header-background-color" scope="col">
+                    <div class="slds-truncate table-header-text text-wrap-td">Qty<br /> ordered</div>
+                </th>
+                <th class="slds-is-resizable table-header-background-color" scope="col">
+                    <div class="slds-truncate table-header-text text-wrap-td">Invoice<br /> Value</div>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.JSONList}" var="item" indexVar="index">
+                <tr class="slds-hint-parent table-row-tr-height" style="border:none;">
+                    <td class="table-data">
+                        <div>{!item.productCode}</div>
+                    </td>
+                    <td class="table-data">
+                        <div class=" text-wrap-td-proDesc">{!item.productDescriptionPackSize}</div>
+                    </td>
+                    <td class="table-data">
+                        <div>{!item.qty}</div>
+                    </td>
+                    <td class="table-data-desc">
+                        <div class="tableData">£{!item.totalInvoiceValue}
+                            <div class="eachInvoiceCss">each £{!item.eachInvoiceValue}</div>
+                        </div>
+                    </td>
+                </tr>
+            </aura:iteration>
+            
+        </tbody>
+        
+    </table>
+    
+    
+</aura:component>

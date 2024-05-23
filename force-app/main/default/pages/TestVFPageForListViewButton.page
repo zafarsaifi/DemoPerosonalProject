@@ -1,0 +1,5 @@
+<apex:page standardController="Account" extensions="CreateTargetRecordController">
+    <apex:form >
+        <apex:commandButton value="Create Target Record" action="{!createTargetRecord}" />
+    </apex:form>
+</apex:page>

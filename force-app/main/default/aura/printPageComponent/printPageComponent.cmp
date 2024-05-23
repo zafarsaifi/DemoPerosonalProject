@@ -1,0 +1,60 @@
+<aura:component >
+    
+    <div style="page-break-after: always;" >
+      <div >
+            <table style="border-spacing: -9px; width:100%; Margin-left:15%; border-collapse:separate;">
+                <tr>
+                    <td class="allTdHeading">Date</td>
+                    <td class="allTDDesc">16/07/2023</td>
+                </tr>
+                <tr>
+                    <td class="allTdHeading">Label number</td>
+                    <td class="allTDDesc">1 of 4</td>
+                </tr>
+                <tr>
+                    <td class="allTdHeading">Return reference number</td>
+                    <td class="allTDDesc">SF-123456789</td>
+                </tr>
+                <tr>
+                    <td class="allTdHeading">Return warehouse</td>
+                    <td class="returnWarehouseDesc">305M - Warrington</td>
+                </tr>
+                <tr>
+                    <td class="allTdHeading">Customer account number</td>
+                    <td class="allTDDesc">406P/11001119P</td>
+                </tr>
+                <tr>
+                    <td class="allTdHeading">Pick note number</td>
+                    <td class="allTDDesc">86166980U</td>
+                </tr>
+                <tr>
+                    <td class="allTdHeading">Invoice number</td>
+                    <td class="allTDDesc">81734813F</td>
+                </tr>
+            </table>
+      </div>
+        <div>
+            <table style= "width:100%; border:1px solid #C9C9C9; border-radius:10px;">
+                <tr>
+                    
+                    <td style= "width:35%; text-align:right; font-size:40px; font-weight:400; color:#949494; font-family: Open Sans; font-style: normal;" >
+                       1 of 4
+                    </td>
+                  </tr>
+            
+              </table>
+           
+        </div>
+    <div>
+    
+        <table style="border-spacing: -9px; width:100%; Margin-left:15%; border-collapse:separate;">
+            <tr>
+                <td class="allTdHeading" style="vertical-align:top;">Return from</td>
+                <td class="allTDDesc">Hamilton Health LTD<br/>T/A Hamilton Pharmacy<br/> Unit 2 North Hamilton Dist CTR<br/>Sandhills Avenue Leicester <br/>LE51QN</td>
+            </tr>
+            
+        </table>
+    </div>
+    </div>
+	
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="message" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <h1>Dynamically Created Table</h1>
+    <br/><br/>
+    {!v.body}
+    <br></br>
+    <hr/>
+    Button Click Result :{!v.message}
+</aura:component>

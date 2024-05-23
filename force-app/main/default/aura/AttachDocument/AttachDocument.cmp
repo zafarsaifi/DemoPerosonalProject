@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg','.pdf']" />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+    <aura:attribute name="disabled" type="Boolean" default="true" />
+    <aura:attribute name="recordId" type="String" />
+    <lightning:fileUpload label="Attach receipt"
+                          name="fileUploader"
+                          multiple="true"
+                          accept="{!v.filetype}"
+                          recordId="{!v.recordId}"
+                          onuploadfinished="{!c.handleUploadFinished}" />
+</aura:component>

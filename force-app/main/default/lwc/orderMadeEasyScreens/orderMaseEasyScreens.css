@@ -1,0 +1,11 @@
+.slds-box {
+    width: 40em;    
+    background-color: gold !important;
+    height: 35em;
+    border-radius: 25px;
+}
+
+.HeaderText {
+    font-size: 35px;
+    font-family: arial;
+}

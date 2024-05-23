@@ -1,0 +1,32 @@
+<template>
+    <Lightning-card title="Child Component" icon-name="action:upload">
+        <lightning-button class="slds-p-horizontal_medium"
+        label="Add"
+         icon-name="utility:add"
+         onclick={addhandler}>
+</lightning-button>     
+        <lightning-button class="slds-p-horizontal_medium"
+                          label="Subtract"
+                          icon-name="utility:dash"
+                          onclick={subtracthandler}>
+        </lightning-button>
+
+        <lightning-button 
+         label="2" 
+         onclick={handleClickOnTwo}
+         icon-name="utility:close"
+         value="2"></lightning-button>
+         <lightning-button
+         label ="3"
+         onclick={handleClickOnThree}
+         inco-name="utility:close"
+         value="3"></lightning-button>
+   
+     <h3>Typing is from Parent Side={textvalue}</h3>
+
+     <h3>Counter increase From Parent Click and Changes in child method</h3>
+        increase by 1 ={counter}
+
+   
+    </Lightning-card>
+</template>

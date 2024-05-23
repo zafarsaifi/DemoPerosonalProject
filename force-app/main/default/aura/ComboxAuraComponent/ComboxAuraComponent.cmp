@@ -1,0 +1,13 @@
+<aura:component controller="AuraCodeHandler">
+    <aura:attribute name="contact" type="Contact[]" default="[]"/>
+    <aura:attribute name="selectedContactId" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <p>Select Contacts</p>
+    <lightning:combobox label="Contact" 
+                        options="{!v.contact}"
+                        value="{!v.selectedContactId}"
+                        onchange="{!c.handleChange}"/>
+    <p>SELECTED Value:{!v.selectedContactId}</p>
+                        
+ 
+</aura:component>

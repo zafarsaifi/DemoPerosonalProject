@@ -1,0 +1,8 @@
+<apex:page >
+    <h1>
+        This is Vfpage is using in the aura component
+    </h1>
+    <p>
+        this is visual force page which is called by Aura cmp
+    </p>
+</apex:page>

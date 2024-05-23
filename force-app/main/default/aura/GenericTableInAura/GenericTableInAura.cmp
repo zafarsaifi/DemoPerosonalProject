@@ -1,0 +1,24 @@
+<aura:component >
+    
+      <!-- Event Handlers -->
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<div class="container">
+    
+    	<lightning:layout multipleRows="true">
+           <lightning:layoutItem size="12">
+               <div>
+                   <h1>Products to return for order: 19-011-082914-25187 (14/12/2021, 19:09)</h1>
+               <br/>
+                  Select the products you would like to return
+               <br/>
+                 Showing 1 - {!v.recordEnd+1} of {!v.totalRecords}
+               </div>
+
+        </lightning:layoutItem>
+         <lightning:layoutItem size="12">
+             <table>
+             </table>
+            </lightning:layoutItem>
+    </lightning:layout>
+    </div>
+</aura:component>

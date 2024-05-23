@@ -1,0 +1,15 @@
+<template>
+    <Lightning-card title="Parent LWC" icon-name="standard:account">
+        <p class="slds-text-align_center"> Count:{number}</p>
+        <lightning-input type="text" variant="standard" name="name" label="label" placeholder="type here..." value ={valueForChild} onchange={handleForChild}></lightning-input>
+        <lightning-button label ="Increament FROM Parent" value={counter} onclick={handleIncreamnentValue}></lightning-button>
+        <!-- Here I am Calling a Child Component =>childLwc -->
+
+          <c-child-lwc onadd={addhandler1}
+           onsubtract={subtracthandler1}
+            onmultiply={multiplyhandler}
+            onmultipybythree={multipybyThree} 
+            textvalue={valueForChild}></c-child-lwc>
+
+    </Lightning-card>
+</template>

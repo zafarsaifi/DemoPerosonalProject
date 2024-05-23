@@ -1,0 +1,35 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<h1>Hello Programmer</h1>
+    <aura:attribute name="var1" type="String" default ="Testing"/>
+    <aura:handler name="init" value="{!this}" action ="{!c.doInit}"/>
+    <aura:attribute name="newAccount" type="Account" 
+                    default = "{'sobjectType':'Account','Name':'TestAccount1'}"
+                    />
+    <aura:attribute name="arrayDemo" type="String[]"
+                    default="{'Test1','Test2','Test3','Test4'}"/>
+    
+    <aura:attribute name="listDemo" type="List"
+                    default ="{'List1','List2','List3','List4'}" />
+    
+    <aura:attribute name="mapDemo" type="Map"
+                    default ="{a:'Apple' ,b:'Mango' ,c:'Banana'}" />
+    
+    
+    <aura:attribute name="jsObject" type="Object"/>
+    
+    <aura:attribute name="wrapperclasss" type="LearnAuraLC.LearnAuraLcTest"/>
+    
+    <h2>Account Name ={!v.newAccount.Name}</h2>
+    <hr/>
+    <h1>Hello :{!v.var1}</h1>
+    <hr/>
+    Array Values :{!v.arrayDemo[0]}, {!v.arrayDemo[1]} ,Length =>{!v.arrayDemo.length}
+    <hr/>
+     List Values :{!v.listDemo[0]}, {!v.listDemo[1]} ,Length =>{!v.listDemo.length}
+    <hr />
+    Map Values :{!v.mapDemo.a} ,{!v.mapDemo.b}
+    <hr/>
+    Object Type :{!v.jsObject.name} - {!v.jsObject.email}
+    <hr/>
+    wrapper classs value :{!v.wrapperclasss.strValue}-{!v.wrapperclasss.intValue}
+</aura:component>

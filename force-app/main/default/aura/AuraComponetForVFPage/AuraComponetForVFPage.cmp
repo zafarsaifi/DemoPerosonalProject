@@ -1,0 +1,12 @@
+<aura:component >
+    <!--This is below code is use for to call the vfpage in aura-->
+	<aura:attribute name="vfHost" type="String" 
+                    default="hicglobalsolutions-6f-dev-ed--c.develop.vf.force.com"/>
+    <iframe aura:id="vfFrame" 
+            src="{!'http://'+ v.vfHost +'/apex/vfPageInAura'}"
+            ></iframe>
+    
+    <!--This is above code is use for to call the vfpage in aura-->
+    
+    <h1>This is my aura component showing on vfpage </h1>
+</aura:component>

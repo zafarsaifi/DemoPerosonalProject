@@ -1,0 +1,26 @@
+<apex:page showHeader="false" applyHtmlTag="false" applyBodyTag="false" renderAs="pdf">
+    <html>
+        <head>
+            <!-- Add your styles here -->
+        </head>
+        <body>
+            <!-- Your PDF content goes here -->
+            <button onclick="generatePDF()">Generate PDF</button>
+            <a id="printButton" style="display: none;">Print</a>
+            <script>
+                function generatePDF() {
+                    // Generate the PDF content here
+                    // You can use JavaScript or Visualforce components to create the PDF content
+                    // After generating the PDF content, show the "Print" link
+                    var printLink = document.getElementById("printButton");
+                    printLink.style.display = "inline";
+                }
+
+                // Function to trigger printing
+                document.getElementById("printButton").addEventListener("click", function () {
+                    window.print();
+                });
+            </script>
+        </body>
+    </html>
+</apex:page>

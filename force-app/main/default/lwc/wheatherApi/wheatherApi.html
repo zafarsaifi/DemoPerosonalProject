@@ -1,0 +1,32 @@
+<template>
+<div class="slds-size_6-of-12">
+    <lightning-card  variant="Narrow"  title="Wheather Farcasting" >
+     
+     <div class="slds-m-around_medium">
+        <lightning-input   
+                         
+                          type="text" 
+                          variant="standard" 
+                          name="name" label="City Name" 
+                          placeholder="Enter the City Name" 
+                          onchange={cityHandler}>
+        </lightning-input>
+     </div>
+
+        <lightning-button
+                          class="slds-m-around_medium"
+                          label="Fetch Weather"
+                          variant="brand"
+                          onclick={getCityWheatherHandler}/>
+        </lightning-button>
+
+        <div if:true={wheatherIcon}>
+            <img scr={wheatherIcon} alt="Image not found"/>
+            <strong>{wheatherText}</strong>
+        </div>
+
+   
+    </lightning-card>
+
+</div>
+</template>

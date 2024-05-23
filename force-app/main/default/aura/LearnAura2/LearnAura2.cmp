@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name ="Message1" type="String" default="Testing purpose"/>
+    <aura:attribute name ="Message2" type="String" default="Testing purpose"/>
+    <aura:handler name ="init" value="{!this}" action ="{!c.doInit}" />
+    <p>Button1=>:{!v.Message1}</p>
+    <lightning:button label="ClickMe" onclick="{!c.handleClick1}"/>
+    <br/><hr/>
+     <p>Button2=>:{!v.Message2}</p>
+      <lightning:button label="ClickMe" onclick="{!c.handleClick2}"/>
+   
+</aura:component>
